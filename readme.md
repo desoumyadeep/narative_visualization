@@ -41,7 +41,12 @@
 The are primarily 2 different structure that have been used for the visualization.
 
 - Page 1: Grouped Bar graph has been used to display the totals of the three measures for the age groups. As the Age groups are discrete and is displayed on x-axis, bar graph has been chosen to display the data
+
+![image-20210728161112543](readme.assets/image-20210728161112543.png)
+
 - Page 2-11: Line graph has been used to display the totals of the three measures for each month from Nov 2020 - June 2021. The data display is filtered based on Age Group and it is visible on the top right. 
+
+![image-20210728161145026](readme.assets/image-20210728161145026.png)
 
 The following cues are used to ensure the viewer understand the data across each scene and to navigate:
 
