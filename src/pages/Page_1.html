@@ -18,6 +18,7 @@
     />
     <link rel="stylesheet" href="../resources/css/style.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../resources/js/d3-annotation.min.js"></script>
   </head>
   <body>
     <main>
@@ -462,6 +463,47 @@
         .text("Vaccinations")
         .style("font-size", "10px")
         .attr("alignment-baseline", "middle");
+
+      var annotations = [
+        {
+          note: {
+            label: "Highest Reported Death (4200+)",
+            title: "Age Group 80+",
+            wrap: 150, // try something smaller to see text split in several lines
+            padding: 10, // More = text lower
+          },
+          color: ["black"],
+          x: x0("80+"),
+          y: y(10000),
+          dy: -50,
+          dx: 50,
+          connector: { end: "dot", endScale: 1 },
+          type: d3.annotationCalloutElbow,
+        },
+        {
+          note: {
+            label: "Highest Reported Cases(84000+)",
+            title: "Age Group 20-29",
+            wrap: 150, // try something smaller to see text split in several lines
+            padding: 10, // More = text lower
+          },
+          color: ["black"],
+          x: x0("20-29") - 13 ,
+          y: y(190000),
+          dy: -50,
+          dx: 50,
+          connector: { end: "dot", endScale: 1 },
+          type: d3.annotationCalloutElbow,
+        },
+      ];
+      console.log(annotations);
+      makeAnnotations = d3.annotation().annotations(annotations);
+      var annote = svg
+        .append("g")
+        .attr("transform", "translate(" + 20 + "," + 10 + ")")
+        .style("font-size", "8px")
+        .call(makeAnnotations);
+      annote.raise();
     };
   </script>
   <script type="text/javascript">

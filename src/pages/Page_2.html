@@ -226,6 +226,21 @@
         },
         {
           note: {
+            label: "82% Drop from previous month",
+            title: "Cases Reported",
+            wrap: 150, // try something smaller to see text split in several lines
+            padding: 10, // More = text lower
+          },
+          color: ["black"],
+          x: xScale(parseTime("2021-06-30")),
+          y: yScale(40),
+          dy: -20,
+          dx: 20,
+          connector: { end: "arrow", endScale: 2 },
+          type: d3.annotationCalloutElbow,
+        },
+        {
+          note: {
             title: "Decreasing Trend",
             lineType: "none",
             align: "middle",

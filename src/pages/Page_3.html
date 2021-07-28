@@ -210,7 +210,8 @@
         },
         {
           note: {
-            label: "Vaccine Approved for adolescents 12 through 15 years of age",
+            label:
+              "Vaccine Approved for adolescents 12 through 15 years of age",
             title: "May 10th",
             wrap: 150, // try something smaller to see text split in several lines
             padding: 10, // More = text lower
@@ -240,6 +241,21 @@
         },
         {
           note: {
+            label: "85% Drop from previous month",
+            title: "Cases Reported",
+            wrap: 150, // try something smaller to see text split in several lines
+            padding: 10, // More = text lower
+          },
+          color: ["black"],
+          x: xScale(parseTime("2021-06-30")),
+          y: yScale(50),
+          dy: -20,
+          dx: 20,
+          connector: { end: "arrow", endScale: 2 },
+          type: d3.annotationCalloutElbow,
+        },
+        {
+          note: {
             label: "Surge in Vaccination for Age Group 12-15",
             title: "May",
             wrap: 150, // try something smaller to see text split in several lines
@@ -256,7 +272,7 @@
           },
           type: d3.annotationCalloutCircle,
         },
-        
+
         {
           note: {
             title: "Decreasing Trend",
