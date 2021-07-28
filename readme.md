@@ -57,6 +57,8 @@ The following cues are used to ensure the viewer understand the data across each
 - Each page has a Page number on top right on the chart and on the bottom left the navigation button
 - If the user is interested to view the details of the data they can do a mouse over and view the details in tooltip
 
+![image-20210728161417666](readme.assets/image-20210728161417666.png)
+
 To highlight the portion of the chart and urge viewers to focus annotations have been used in every chart to drive home the message. 
 
 The button, color consistency and the similarity of chart, position of page number and the Age Group dropdown from Pages 2-12 will help the user to understand how each measure vary over time for each age group (other scenes). 
@@ -114,3 +116,5 @@ The Age Group parameter along with page number helps the users identify how the 
 The Next Button acts as a trigger in each page while the dropdown to select the age group also is a trigger acts as a filter to change the data in the chart.
 
 The button is the bottom right hand side of the page and on mouseover change color. As for the dropdown it is dissabled and greyed out in all pages except for the last one where it is enabled and has a white background.
+
+![image-20210728161328178](readme.assets/image-20210728161328178.png)

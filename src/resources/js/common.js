@@ -1,4 +1,20 @@
 // Parameter Selection
+const month = [
+  "Totals",
+  "0-9",
+  "10-19",
+  "20-29",
+  "30-39",
+  "40-49",
+  "50-59",
+  "60-69",
+  "70-79",
+  "80+",
+  "Unknown",
+];
+
+const g = (v) => [].concat(v).map((d) => d);
+
 setButton = (page_no) => {
   pn = (Number(page_no) % 12) + 1;
   var url = "./Page_" + pn.toString() + ".html";
@@ -36,6 +52,13 @@ setNav = (page_no) => {
 };
 
 setParameter = (page_no) => {
+  var tmp = "";
+  d3.select("#message")
+    .append("span")
+    .attr("class", "fs-4")
+    .text(
+      "Vaccination has helped to reduce overall Covid Cases and Deaths in Maryland across Age all Groups"
+    );
   var param = "";
   switch (page_no) {
     case "n":
@@ -43,15 +66,55 @@ setParameter = (page_no) => {
       break;
     case "1":
       param = { chart_file: "../resources/data/details_by_age.csv" };
-      break;
-    case "3":
-      param = { chart_file: "../resources/data/details_data_by_month.csv" };
+      d3.select("#chart_header")
+        .append("span")
+        .attr("class", "fs-4")
+        .text("Totals of Covid-19 Case, Death and Vaccination by Age Groups");
+      d3.select("#chart_header")
+        .append("p")
+        .text(
+          "The below chart shows the totals of Cases, Deaths and Vaccination from March 2020 to June 2021 by Age Groups."
+        );
+      d3.select("#chart_footer")
+        .append("p")
+        .text(
+          "The above chart plots totals of Cases, Deaths and Vaccinations by " +
+            "Age Group. The vertical axis plots the counts in Logarithmic " +
+            "Scale while the horizontal axis plots three measures of Cases, " +
+            "Deaths and Vaccinations by Age Group. The tooltip shows the " +
+            "details of each measures for the particular Age Group."
+        );
       break;
     default:
       param = { chart_file: "../resources/data/details_data_by_month.csv" };
+      const x = () => {
+        tmp = g(month[Number(page_no) - 1]);
+        return (
+          "Covid-19 Case, Death and Vaccination Totals for Age Group " +
+          tmp +
+          " by Month"
+        );
+      };
+      d3.select("#chart_header").append("span").attr("class", "fs-4").text(x());
+      d3.select("#chart_header")
+        .append("p")
+        .text(
+          "The below chart shows the month-to-month change of Cases, Deaths and Vaccination for the age group from November 2020 to June 2021."
+        );
+      d3.select("#chart_footer")
+        .append("p")
+        .text(
+          "The above chart plots totals of Cases, Deaths and Vaccinations by " +
+            "Age Group. The vertical " +
+            "axis plots the counts in Logarithmic Scale while the horizontal " +
+            "axis plots months. The tooltip shows the details of the three " +
+            "measures for the selected month."
+        );
+
       break;
   }
-  console.log(param);
+  //console.log(param);
+
   return param;
 };
 
@@ -64,20 +127,6 @@ function kFormatter(num) {
 }
 
 loadAgeDDL = (page_no) => {
-  var month = [
-    "Totals",
-    "0-9",
-    "10-19",
-    "20-29",
-    "30-39",
-    "40-49",
-    "50-59",
-    "60-69",
-    "70-79",
-    "80+",
-    "Unknown",
-  ];
-  const g = (v) => [].concat(v).map((d) => d);
   var q = month;
   const ddl = d3
     .select("#ddlContainer")

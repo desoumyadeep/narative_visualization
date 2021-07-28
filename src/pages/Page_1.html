@@ -23,23 +23,10 @@
   <body>
     <main>
       <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom">
-          <span class="fs-4">
-            Vaccination has helped to reduce overall Covid Cases and Deaths in
-            Maryland across Age all Groups
-          </span>
-        </header>
+        <header class="pb-3 mb-4 border-bottom" id="message"></header>
         <div class="p-5 mb-4 bg-light border rounded-3">
           <div class="row">
-            <div class="col-sm-12">
-              <span class="fs-4">
-                Totals of Covid-19 Case, Death and Vaccination by Age Groups
-              </span>
-              <p>
-                The below chart shows the totals of Cases, Deaths and
-                Vaccination from March 2020 to June 2021 by Age Groups.
-              </p>
-            </div>
+            <div class="col-sm-12" id="chart_header"></div>
           </div>
           <div class="row">
             <div class="col-sm-4" id="page_nav"></div>
@@ -48,15 +35,7 @@
             <svg id="svgContainer" style="height: 452px; width: 1000px"></svg>
           </div>
           <div class="row">
-            <div class="col-sm-10">
-              <p>
-                The chart above plots totals of cases, deaths and Vaccination by
-                Age Group. The vertical axis plots the counts in Logarithmic
-                Scale while the horizontal axis plots three measures of Case,
-                Death and Vaccinations by Age Group. The tooltip shows the
-                details of each measures for the particular Age Group.
-              </p>
-            </div>
+            <div class="col-sm-10" id="chart_footer"></div>
             <div class="col-sm-2">
               <div class="col-sm-2" id="btn"></div>
             </div>
