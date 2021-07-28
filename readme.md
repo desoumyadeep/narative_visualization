@@ -4,8 +4,9 @@
 
 ## Overview
 
-- The Project is hosted in GitHub and the url is https://desoumyadeep.github.io/narative_visualization/src/pages/Page_1.html
-- The data has been downloaded https://opendata.maryland.gov/ to develop the charts. Data for the 3 measures, cases reported, death reported and vaccinations reported across all age groups has been used.
+- The Narative Visualization Project is hosted in GitHub and the url is https://desoumyadeep.github.io/narative_visualization/src/pages/Page_1.html
+- The data for this project has been downloaded https://opendata.maryland.gov/ to develop the charts.
+- The data has been preprocessed using Python and Pandas.
 
 ## Messaging. 
 
@@ -42,11 +43,11 @@ The are primarily 2 different structure that have been used for the visualizatio
 
 - Page 1: Grouped Bar graph has been used to display the totals of the three measures for the age groups. As the Age groups are discrete and is displayed on x-axis, bar graph has been chosen to display the data
 
-![image-20210728161112543](readme.assets/image-20210728161112543.png)
+![image-20210728181830945](readme.assets/image-20210728181830945.png)
 
 - Page 2-11: Line graph has been used to display the totals of the three measures for each month from Nov 2020 - June 2021. The data display is filtered based on Age Group and it is visible on the top right. 
 
-![image-20210728161145026](readme.assets/image-20210728161145026.png)
+![image-20210728181901503](readme.assets/image-20210728181901503.png)
 
 The following cues are used to ensure the viewer understand the data across each scene and to navigate:
 
