@@ -57,7 +57,8 @@ setNav = (page_no) => {
     .append("nav")
     .attr("aria-label", "Page No.")
     .append("ul")
-    .attr("class", "pagination pagination-sm");
+    .attr("class", "pagination pagination-sm")
+    .attr("title","Page No.");
 
   for (i = 1; i < 13; i++) {
     li = nav.append("li");
@@ -169,7 +170,8 @@ loadAgeDDL = (page_no) => {
   const ddl = d3
     .select("#ddlContainer")
     .insert("select", "svg")
-    .attr("class", "form-select form-select-sm");
+    .attr("class", "form-select form-select-sm")
+    .attr("title","Selected Age Group");
 
   if (page_no != "12") {
     ddl.property("disabled", true);
