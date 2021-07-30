@@ -19,7 +19,8 @@ setButton = (page_no) => {
   // Next Button
   var pn = (Number(page_no) % 12) + 1;
   var url = "./Page_" + pn.toString() + ".html";
-  var btnText = page_no == "12" ? "Start \u21BA" : "Next \u00BB";
+  var btnText = page_no == "12" ? "\u21BA" : "\u00BB";
+  var btnTitle = page_no == "12" ? "Restart" : "Next";
 
   div = d3.select("#btn");
   div
@@ -28,13 +29,15 @@ setButton = (page_no) => {
     .append("input")
     .attr("type", "button")
     .attr("class", "btn btn-outline-secondary")
-    .attr("value", btnText);
+    .attr("value", btnText)
+    .attr("title",btnTitle);
 
   // Previous
   pn = Number(page_no) - 1;
 
   url = "./Page_" + pn.toString() + ".html";
-  btnText = page_no == "1" ? "\u2302 Start" : "\u00AB Previous";
+  btnText = page_no == "1" ? "\u2302" : "\u00AB";
+  btnTitle = page_no == "1" ? "Start" : "Previous";
   div = d3.select("#btn_prev");
   if (pn != 0) {
     div
@@ -43,7 +46,8 @@ setButton = (page_no) => {
       .append("input")
       .attr("type", "button")
       .attr("class", "btn btn-outline-secondary")
-      .attr("value", btnText);
+      .attr("value", btnText)
+      .attr("title",btnTitle);
   }
 };
 
