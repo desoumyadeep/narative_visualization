@@ -57,7 +57,7 @@
 >
 > How does it help the viewer transition to other scenes, to understand how the data connects to the data in other scenes?
 
-The Narative Layout used for the visualization is Slideshow along with Annotated Chart. 
+The Narative Structure used is Linear and Narative Layout used for the visualization is Slideshow with Annotated Chart. 
 
 Two different page layout have been used for the visualization.
 

@@ -16,10 +16,10 @@ const month = [
 const g = (v) => [].concat(v).map((d) => d);
 
 setButton = (page_no) => {
-  pn = (Number(page_no) % 12) + 1;
+  // Next Button
+  var pn = (Number(page_no) % 12) + 1;
   var url = "./Page_" + pn.toString() + ".html";
-
-  var btnText = page_no == "12" ? "Start Page" : "Next Page";
+  var btnText = page_no == "12" ? "Start \u21BA" : "Next \u00BB";
 
   div = d3.select("#btn");
   div
@@ -29,6 +29,22 @@ setButton = (page_no) => {
     .attr("type", "button")
     .attr("class", "btn btn-outline-secondary")
     .attr("value", btnText);
+
+  // Previous
+  pn = Number(page_no) - 1;
+
+  url = "./Page_" + pn.toString() + ".html";
+  btnText = page_no == "1" ? "\u2302 Start" : "\u00AB Previous";
+  div = d3.select("#btn_prev");
+  if (pn != 0) {
+    div
+      .append("a")
+      .attr("href", url)
+      .append("input")
+      .attr("type", "button")
+      .attr("class", "btn btn-outline-secondary")
+      .attr("value", btnText);
+  }
 };
 
 setNav = (page_no) => {
