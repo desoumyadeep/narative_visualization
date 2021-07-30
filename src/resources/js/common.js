@@ -81,8 +81,13 @@ setParameter = (page_no) => {
           "The above chart plots totals of Cases, Deaths and Vaccinations by " +
             "Age Group. The vertical axis plots the counts in Logarithmic " +
             "Scale while the horizontal axis plots three measures of Cases, " +
-            "Deaths and Vaccinations by Age Group. The tooltip shows the " +
-            "details of each measures for the particular Age Group."
+            "Deaths and Vaccinations by Age Group."
+        );
+      d3.select("#chart_footer")
+        .append("p")
+        .append("em")
+        .text(
+          "The tooltip shows the details of each measures for the particular Age Group."
         );
       break;
     default:
@@ -105,11 +110,24 @@ setParameter = (page_no) => {
         .append("p")
         .text(
           "The above chart plots totals of Cases, Deaths and Vaccinations by " +
-            "Age Group. The vertical " +
-            "axis plots the counts in Logarithmic Scale while the horizontal " +
-            "axis plots months. The tooltip shows the details of the three " +
-            "measures for the selected month."
+            "Age Group. The vertical axis plots the counts in Logarithmic Scale " +
+            "while the horizontal axis plots months."
         );
+      cf =
+        "The tooltip shows the details of the three measures for the selected month. ";
+
+      ef = "The dropdown can be used to filer the chart.";
+
+      if (page_no != 12) {
+        d3.select("#chart_footer").append("p").append("em").text(cf);
+      } else {
+        d3.select("#chart_footer")
+          .append("p")
+          .append("em")
+          .text(cf)
+          .append("mark")
+          .text(ef);
+      }
 
       break;
   }

@@ -21,11 +21,31 @@
 > How does your narrative visualization follow that structure? (All of these structures can include the opportunity to "drill-down" and explore. The difference is where that opportunity happens in the structure.)
 
 - The narrative structure used to convey the message is Martini glass. 
+
 - The presentation is divided into 12 pages. 
+
   - The first page shows the totals of cases, deaths and vaccination (atleast 1) from begining of the pandemic i.e. March 2020 to June 2021. 
   - The next 10 slided shows the monthly totals for each age group comprising of 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+ and Unknown. 
   - User is not provided with any interaction capabilites other than tooltip in the first 11 slides.
   - In the 12th slide the user has the capability to explore and compare between various age groups by changing the dropdown list. By default the dropdown shows the total cases by month. 
+
+  ```mermaid
+  graph LR;
+  	P1(Page 1) --> P2(Page 2)
+  	P2 -.->|Page 3,4,..8,9|P10(Page 10) 
+  	P10 --> P11(Page 11)
+  	P11 --> P12
+  	subgraph User Interaction
+  		P12(Page 12)
+  		P12 --> F1(Age Group: Total)
+  		P12 --> F2(Age Group: 0-9)
+  		P12 --> F4(Age Group: 10-19,...,60-69)
+  		P12 --> F5(Age Group: 80+)
+  		P12 --> F6(Age Group: Unknown)
+  	end
+  ```
+
+  
 
 ## Visual Structure. 
 
@@ -37,7 +57,7 @@
 >
 > How does it help the viewer transition to other scenes, to understand how the data connects to the data in other scenes?
 
-
+The Narative Layout used for the visualization is Slideshow, with page number visible from 1-12 with button to traverse the entire presentation.
 
 Two different page layout have been used for the visualization.
 
@@ -74,12 +94,13 @@ Two different page layout have been used for the visualization.
 The following cues are used to ensure the viewer understand the data across each scene and to navigate:
 
 - Color consistency has been maintained across all the chart with the 3 measures having 3 distinct colors.
+
   - Blue for Reported Cases
   - Pink for Reported Deaths
   - Green for Vaccinations (atleast 1 shot) 
-  
+
   ![image-20210728190307630](readme.assets/image-20210728190307630.png)
-  
+
 - Each page has a Page number on top right on the chart and on the bottom left the navigation button
 
 ![image-20210728190327840](readme.assets/image-20210728190327840.png)
@@ -172,6 +193,8 @@ The Age Group parameter along with page number helps the users identify how the 
 
 The Next Button acts as a trigger in each page while the dropdown to select the age group also is a trigger acts as a filter to change the data in the chart.
 
-The button is the bottom right hand side of the page and on mouseover change color. As for the dropdown it is dissabled and greyed out in all pages except for the last one where it is enabled and has a white background.
+The button is the bottom right hand side of the page and on mouseover change color. As for the dropdown it is dissabled and greyed out in all pages except for the last one where it is enabled and has a white background. Also in the 12th Page the user is provided with a highlighted text to notify that the dropdown can be used to filter the chart.
+
+![image-20210729230417450](readme.assets/image-20210729230417450.png)
 
 ![image-20210728161328178](readme.assets/image-20210728161328178.png)
