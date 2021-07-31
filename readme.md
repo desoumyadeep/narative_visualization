@@ -1,10 +1,10 @@
-# Narative Visualization Project
+# Narrative Visualization Project
 
 [toc]
 
 ## Overview
 
-- The Narative Visualization Project is hosted in GitHub and the url is https://desoumyadeep.github.io/narative_visualization/src/pages/Page_1.html
+- The Narrative Visualization Project is hosted in GitHub and the url is https://desoumyadeep.github.io/Narrative_visualization/src/pages/Page_1.html
 - The data used to generate for this project has been downloaded from https://opendata.maryland.gov/
 - The data has been preprocessed using Python and Pandas.
 
@@ -12,7 +12,7 @@
 
 > What is the message you are trying to communicate with the narrative visualization?
 
-- The visualization helps to bring forth the message that "Vaccination has helped to reduce overall Covid Cases and Deaths in Maryland across Age all Groups". 
+- The visualization helps to bring forth the message that "Vaccination has helped to reduce overall Covid Cases and Deaths in Maryland across all Age Groups". 
 
 ## Narrative Structure 
 
@@ -24,10 +24,10 @@
 
 - The presentation is divided into 12 scenes. 
 
-  - The first scene shows the totals of cases, deaths and vaccination (atleast 1) from begining of the pandemic i.e. March 2020 to June 2021. 
-  - The next 10 scenes shows the monthly totals for each age group comprising of 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+ and Unknown. 
-  - User is not provided with any interaction capabilites other than tooltip and next and previous buttons in the first 11 scenes.
-  - In the 12th scene the user has the capability to explore and compare between various age groups by changing the dropdown list and subsequently filtering the chart. By default the dropdown shows the total cases by month. 
+  - The first scene shows the totals of cases, deaths and vaccinations  (atleast 1) from begining of the pandemic i.e. March 2020 to June 2021. 
+  - The next 10 scenes show the monthly totals for each age group comprising of 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+ and Unknown. 
+  - User is not provided with any interaction capabilites other than tooltip and Next and Previous buttons in the first 11 scenes.
+  - In the 12th scene the user has the capability to explore and compare between various age groups by changing the dropdown list and subsequently filtering the chart. By default, the dropdown shows the total cases by month. The user will also be able to navigate to the previous scene or start from the beginning.
 
   ```mermaid
   graph LR;
@@ -45,7 +45,7 @@
   	end
   ```
 
-  *Figure 1: Navigation Flow of the Narative Visualization.*
+  *Figure 1: Navigation Flow of the Narrative Visualization.*
 
 ## Visual Structure 
 
@@ -57,20 +57,20 @@
 >
 > How does it help the viewer transition to other scenes, to understand how the data connects to the data in other scenes?
 
-The Narative Structure used is Linear with Next, Previous and Restart buttons and Narative Layout used for the visualization is Slideshow with Annotated Chart. 
+The Narrative Structure used is Linear with Next, Previous and Restart buttons and Narrative Layout used for the visualization is Slideshow with Annotated Chart. 
 
-Two different page layout have been used for the visualization.
+Two different scene layouts have been used for the visualization.
 
 - Page 1: 
   - The Layout of the Page is divided into following sections:
-    - Header : Containg the message
+    - Header : Containing the message
     - Chart Header: Containing the Chart Name and short description
     - Page Number: Scene Number
     - Chart
       - Grouped Bar graph has been used to display the totals of the three measures for the age groups
-      - As the Age groups are discrete and is displayed on x-axis, bar graph has been chosen to display the data
+      - As the Age groups are discrete and are displayed on x-axis, bar graph has been chosen to display the data
     - Chart Footer
-    - Button : To navigate to the next page
+    - Button : To navigate to the previous or next page
 
 ![image-20210730194633290](readme.assets/image-20210730194633290.png)
 
@@ -78,13 +78,13 @@ Two different page layout have been used for the visualization.
 
 
 
-- Page 2-11: 
+- Page 2-12: 
   - Header : Containg the message
   - Chart Header: Containing the Chart Name and short description
   - Page Number: Scene Number
   - Drop Down: Age Group
-    - Enabled in Scene 12 only to facilitate user interactions
-    - For Scenes 2 - 11, it is selected in Javascript and is disabled
+    - Only enabled in Scene 12 in order to facilitate user interactions
+    - Disabled using Javascript from Scenes 2 - 11
   - Chart
     - Line graph has been used to display the totals of the three measures for each month from Nov 2020 - June 2021. 
     - The data display is filtered based on Age Group and it is visible on the top right. 
@@ -95,11 +95,11 @@ Two different page layout have been used for the visualization.
 
 ![image-20210730194709077](readme.assets/image-20210730194709077.png)
 
-*Figure 3: Twelve Page of the Narrative Visualization with annotated chart, page number, navigation button along with dropdown list for user interaction*
+*Figure 3: Page 12 of the Narrative Visualization with annotated chart, page number, navigation button along with dropdown list for user interaction*
 
-The following cues are used to ensure the viewer understand the data across each scene and to navigate:
+The following cues are used to ensure the viewer understands the data across each scene and how to navigate:
 
-- Color consistency has been maintained across all the chart with the 3 measures having 3 distinct colors.
+- Color consistency has been maintained across all the charts with the 3 measures having 3 distinct colors.
 
   - Blue for Reported Cases
   - Pink for Reported Deaths
@@ -113,7 +113,7 @@ The following cues are used to ensure the viewer understand the data across each
 
   
 
-- Each page has a Page number on top right on the chart with Tooltip displaying "Page No."
+- Each page has a Page number on top left of the chart with Tooltip displaying "Page No."
 
 
 
@@ -123,7 +123,7 @@ The following cues are used to ensure the viewer understand the data across each
 
 
 
-- On the bottom left of the page there navigation buttons and every button has tooltip helping the user to navigate
+- On the bottom right of the page there are navigation buttons and every button has tooltip helping the user to navigate
 
 ![image-20210730194914962](readme.assets/image-20210730194914962.png)
 
@@ -135,13 +135,13 @@ The following cues are used to ensure the viewer understand the data across each
 
 
 
-- If the user is interested to view the details of the data they can do a mouse over and view the details in tooltip
+- If the user is interested to view the details of the data he/she can do a mouseover and view the details in tooltip
 
 ![image-20210728161417666](readme.assets/image-20210728161417666.png)
 
 *Figure 7: Chart with Tooltip*
 
-To highlight the portion of the chart and urge viewers to focus annotations have been used in every chart to drive home the message. 
+To highlight the portion of the chart and urge viewers to focus, annotations have been used in every chart to drive home the message. 
 
 ![image-20210728190537893](readme.assets/image-20210728190537893.png)
 
@@ -149,13 +149,15 @@ To highlight the portion of the chart and urge viewers to focus annotations have
 
 
 
-The button, color consistency and the similarity of chart, position of page number and the Age Group dropdown from Pages 2-12 will help the user to understand how each measure vary over time for each age group (other scenes). 
+The  similarity of chart type (line chart) along with position of page number, color consistency and the Age Group dropdown from Pages 2-12 will help the user to understand how each measure varies over time for each age group across scenes. 
 
 ## Scenes. 
 
 > What are the scenes of your narrative visualization?  How are the scenes ordered, and why
 
-The visualization with the Totals byt Age Page and the user navigates through Details for each Age Group in the subsequent scenes / pages.
+The visualization starts with the Totals by Age and the user navigates through details of each Age Group in the subsequent scenes / pages. 
+
+The scenes are ordered in increasing order of the Age Group, starting with overall summary by Age Group. 
 
 ```mermaid
 graph TD;
@@ -188,11 +190,11 @@ graph TD;
 
 
 
-The following are the scenes in the narative visualization:
+The following are the scenes in the Narrative visualization:
 
-- Page 1: Covid-19 Case, Death and Vaccination Totals by Age Groups: the chart is contains grouped barchart to show the totals of the three measures by Age Groups
-- Pages 2 - 11: Covid-19 Case, Death and Vaccination Totals for the selected Age Groups by Month: the chart contains line graph, with counts of each measure plotted across the y-axis and date range from November 2020 to June 2021 in x-axis. The age group used to plot the graph is visible on right hand side just above the chart. Each chart has annotations to highlight the message i.e. vaccinations has helped reduce Covid-19 cases and deaths.
-- Page 12:  Covid-19 Case, Death and Vaccination Totals for all Age Groups by Month: the chart is similar to the charts in previous scenes, but here the users can interact and change the dropdown to load  the age groups and view the details
+- Page 1: Covid-19 Case, Death and Vaccination Totals by Age Groups: The chart contains grouped barchart to show the totals of the three measures by Age Groups
+- Pages 2 - 11: Covid-19 Case, Death and Vaccination Totals for the selected Age Groups by Month: The chart contains line graph, with counts of each measure plotted in y-axis and date range from November 2020 to June 2021 in x-axis. The age group used to plot the graph is visible on right hand side just above the chart. Each chart has annotations to highlight the message i.e. vaccinations has helped reduce Covid-19 cases and deaths.
+- Page 12:  Covid-19 Case, Death and Vaccination Totals for all Age Groups by Month: The chart is similar to the charts in previous scenes, but here the users can interact and change the dropdown to load  the age groups and view the details
 
 *Note: Log scale is used in y-axis for all scales due to data variations between cases, deaths and vaccinations.*
 
@@ -206,15 +208,15 @@ The following are the scenes in the narative visualization:
 
 
 
-The annotation follows a templates showing 3 important information:
+The annotations follow the same template across all scenes. They are primarily:
 
-- highlighting the date when the vaccination was approved for the age group
+- Highlights of the date when the vaccination was approved for the age group
 
 ![image-20210728191727662](readme.assets/image-20210728191727662.png)
 
 *Figure 10: Annotation of milestone date on the y-axis.*
 
-- the decreasing trends in cases and deaths in the months of May and June 2021
+- The decreasing trends in cases and deaths in the months of May and June 2021
 
 - The drop in cases and deaths by the end of June
 
@@ -232,11 +234,14 @@ There are no changes in annotation within a single scene
 >
 > How are the parameters used to define the state and each scene?
 
-The page number on the top left the parameter that is consitent for all pages, for pages between 2-11 the Age Group Information.
+The parameters of the narrative visualization are as follows:
 
-The page Number helps the user identify the progression of the scene starting with the totals by age group in the first page and subsequently going though the stats of each Age group.
+- Page number on the top left 
+- Pages 2-11:  the Age Group Information on top right
 
-The Age Group parameter along with page number helps the users identify how the measures vary for each age group and maintain a sequence from one age group to another. 
+The page Number helps the user identify the progression of the scene starting with the totals by age group in the first page and subsequently going though the statistics of each Age group.
+
+The Age Group parameter alongwith page number helps the viewer to identify how each measure varies for each age group. 
 
 ## Triggers. 
 
@@ -244,9 +249,19 @@ The Age Group parameter along with page number helps the users identify how the 
 >
 > What affordances are provided to the user to communicate to them what options are available to them in the narrative visualization?
 
-The Next Button acts as a trigger in each page while the dropdown to select the age group also is a trigger acts as a filter to change the data in the chart.
+The triggers in the narrative visualization are as follows:
 
-The button is the bottom right hand side of the page and on mouseover change color. As for the dropdown it is dissabled and greyed out in all pages except for the last one where it is enabled and has a white background. The tooltip on the dropdown displays "Selected Age Group" Also in the 12th Page the user is provided with a highlighted text to notify that the dropdown can be used to filter the chart.
+- Page 1-11: Next and Previous buttons: used to navigate page
+- Page 12: 
+  - Previous and Restart buttons
+  - Dropdown to select the Age Group : This is used to filter the chart.
+
+The affordance provided are as follows:
+
+- The buttons on the bottom right hand side of the page change color on mouseover. 
+- The dropdown is disabled and greyed out in all pages except for page 12 
+- The dropdown is enabled in page 12 has a white background with a tooltip displaying "Selected Age Group" 
+- The chart footer tells the viewer that the dropdown can be used to filter the chart.
 
 ![image-20210729230417450](readme.assets/image-20210729230417450.png)
 

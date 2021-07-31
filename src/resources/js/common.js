@@ -78,7 +78,7 @@ setParameter = (page_no) => {
     .append("span")
     .attr("class", "fs-4")
     .text(
-      "Vaccination has helped to reduce overall Covid Cases and Deaths in Maryland across Age all Groups"
+      "Vaccination has helped to reduce overall Covid Cases and Deaths in Maryland across all Age Groups"
     );
   var param = "";
   switch (page_no) {
