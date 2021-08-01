@@ -13,6 +13,17 @@ const month = [
   "Unknown",
 ];
 
+const det_date = [
+  "2020-11-30",
+  "2020-12-31",
+  "2021-01-31",
+  "2021-02-28",
+  "2021-03-31",
+  "2021-04-30",
+  "2021-05-31",
+  "2021-06-30",
+];
+
 const g = (v) => [].concat(v).map((d) => d);
 
 setButton = (page_no) => {
@@ -30,7 +41,7 @@ setButton = (page_no) => {
     .attr("type", "button")
     .attr("class", "btn btn-outline-secondary")
     .attr("value", btnText)
-    .attr("title",btnTitle);
+    .attr("title", btnTitle);
 
   // Previous
   pn = Number(page_no) - 1;
@@ -47,7 +58,7 @@ setButton = (page_no) => {
       .attr("type", "button")
       .attr("class", "btn btn-outline-secondary")
       .attr("value", btnText)
-      .attr("title",btnTitle);
+      .attr("title", btnTitle);
   }
 };
 
@@ -58,7 +69,7 @@ setNav = (page_no) => {
     .attr("aria-label", "Page No.")
     .append("ul")
     .attr("class", "pagination pagination-sm")
-    .attr("title","Page No.");
+    .attr("title", "Page No.");
 
   for (i = 1; i < 13; i++) {
     li = nav.append("li");
@@ -171,7 +182,7 @@ loadAgeDDL = (page_no) => {
     .select("#ddlContainer")
     .insert("select", "svg")
     .attr("class", "form-select form-select-sm")
-    .attr("title","Selected Age Group");
+    .attr("title", "Selected Age Group");
 
   if (page_no != "12") {
     ddl.property("disabled", true);
@@ -190,4 +201,46 @@ loadAgeDDL = (page_no) => {
       return "Age Group : " + d;
     });
   return page_no == "12" ? "Totals" : month[Number(page_no) - 1];
+};
+
+setDetailsBtn = () => {
+  div = d3.select("#det_btn");
+  div
+    .append("button")
+    .attr("type", "button")
+    .attr("class", "btn btn-outline-primary btn-sm")
+    .text("Click for More Details")
+    .attr("title", "Daily Details for the selected Age Group")
+    .attr("data-toggle", "modal")
+    .attr("data-target", "#exampleModal");
+};
+
+loadmodal = () => {
+  d3.select("#exampleModalLabel").text(function () {
+    return "Daily Details for for Age Group: " + index;
+  });
+  var ddl2 = d3
+    .select("#detail_month")
+    .insert("select", "svg")
+    .attr("class", "form-select form-select-sm")
+    .attr("title", "Selected Month");
+
+  ddl2
+    .selectAll("option")
+    .data(det_date)
+    .enter()
+    .append("option")
+    .attr("value", function (d) {
+      return d;
+    })
+    .text(function (d) {
+      var dt = new Date(d);
+      return (
+        dt.getFullYear() +
+        " - " +
+        dt.toLocaleString("default", { month: "long" })
+      );
+    });
+
+  return { start: "2020-11-01", end: "2020-11-30" };
 };
