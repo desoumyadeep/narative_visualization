@@ -20,32 +20,42 @@
 >
 > How does your narrative visualization follow that structure? (All of these structures can include the opportunity to "drill-down" and explore. The difference is where that opportunity happens in the structure.)
 
-- The narrative structure used to convey the message is Martini glass. 
+The narrative structure used to convey the message is Martini glass. 
 
-- The presentation is divided into 12 scenes. 
+The presentation is divided into 12 scenes. 
 
-  - The first scene shows the totals of cases, deaths and vaccinations  (atleast 1) from begining of the pandemic i.e. March 2020 to June 2021. 
-  - The next 10 scenes show the monthly totals for each age group comprising of 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+ and Unknown. 
-  - User is not provided with any interaction capabilites other than tooltip and Next and Previous buttons in the first 11 scenes.
-  - In the 12th scene the user has the capability to explore and compare between various age groups by changing the dropdown list and subsequently filtering the chart. By default, the dropdown shows the total cases by month. The user will also be able to navigate to the previous scene or start from the beginning.
+- The first scene shows the totals of cases, deaths and vaccinations  (atleast 1) from begining of the pandemic i.e. March 2020 to June 2021. 
+- The next 10 scenes show the monthly totals for each age group comprising of 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80+ and Unknown. 
+- User is not provided with any interaction capabilites other than tooltip and Next and Previous buttons in the first 11 scenes.
+- In the 12th scene the user has the capability to explore and daily details for the selected age groups by changing the dropdown list and clicking the button "Click for More Details". By default, the dropdown shows the total cases by month. The user will also be able to navigate to the previous scene or start from the beginning.
 
-  ```mermaid
-  graph LR;
-  	P1(Page 1) --> P2(Page 2)
-  	P2 -.->|Page 3,4,..8,9|P10(Page 10) 
-  	P10 --> P11(Page 11)
-  	P11 --> P12
-  	subgraph User Interaction
-  		P12(Page 12)
-  		P12 --> F1(Age Group: Total)
-  		P12 --> F2(Age Group: 0-9)
-  		P12 --> F4(Age Group: 10-19,...,60-69)
-  		P12 --> F5(Age Group: 80+)
-  		P12 --> F6(Age Group: Unknown)
-  	end
-  ```
+```mermaid
+graph LR;
+	P1(Page 1) --> P2(Page 2)
+	P2 -.->|Page 3,4,..8,9|P10(Page 10) 
+	P10 --> P11(Page 11)
+	P11 --> P12
+	subgraph User Interaction
+		P12(Page 12)
+		P12 --> F1(Age Group: Total)
+		P12 --> F2(Age Group: 0-9)
+		P12 --> F4(Age Group: 10-19,...,60-69)
+		P12 --> F5(Age Group: 80+)
+		P12 --> F6(Age Group: Unknown)
+	end
+```
 
-  *Figure 1: Navigation Flow of the Narrative Visualization.*
+*Figure 1: Navigation Flow of the Narrative Visualization.*
+
+
+
+![image-20210801093623490](readme.assets/image-20210801093623490.png)
+
+
+
+![image-20210801094241395](readme.assets/image-20210801094241395.png)
+
+*Figure 2: Daily Details for the selected age group*
 
 ## Visual Structure 
 
@@ -74,7 +84,7 @@ Two different scene layouts have been used for the visualization.
 
 ![image-20210730194633290](readme.assets/image-20210730194633290.png)
 
-*Figure 2: First Page of the Narrative Visualization with annotated chart, page number and navigation button.*
+*Figure 3: First Page of the Narrative Visualization with annotated chart, page number and navigation button.*
 
 
 
@@ -85,17 +95,25 @@ Two different scene layouts have been used for the visualization.
   - Drop Down: Age Group
     - Only enabled in Scene 12 in order to facilitate user interactions
     - Disabled using Javascript from Scenes 2 - 11
+  - The "Click for More Details" is the button that helps user interact and drilldown to view daily details. 
+  
+  ![image-20210801093339777](readme.assets/image-20210801093339777.png)
+  
+  *Figure 4: Page 10 of Narrative Visualization with annotations*
+  
+  
+  
   - Chart
     - Line graph has been used to display the totals of the three measures for each month from Nov 2020 - June 2021. 
     - The data display is filtered based on Age Group and it is visible on the top right. 
   - Chart Footer
   - Button
     - Scene 2 - 11: To navigate to the previous or next scene
-    - Page 12 : To navigate to previous or first scene
+    - Page 12 : To navigate to previous or first scene and "Click for More Details" 
 
-![image-20210730194709077](readme.assets/image-20210730194709077.png)
+![image-20210801093250999](readme.assets/image-20210801093250999.png)
 
-*Figure 3: Page 12 of the Narrative Visualization with annotated chart, page number, navigation button along with dropdown list for user interaction*
+*Figure 5: Page 12 of the Narrative Visualization with annotated chart, page number, navigation button along with dropdown list and "Click for More Details" for user interaction*
 
 The following cues are used to ensure the viewer understands the data across each scene and how to navigate:
 
@@ -119,7 +137,7 @@ The following cues are used to ensure the viewer understands the data across eac
 
 ![image-20210730195744514](readme.assets/image-20210730195744514.png)
 
-*Figure 5: Page / Scene Number with tooltip*
+*Figure 6: Page / Scene Number with tooltip*
 
 
 
@@ -131,7 +149,7 @@ The following cues are used to ensure the viewer understands the data across eac
 
 ![image-20210730195012048](readme.assets/image-20210730195012048.png)
 
-*Figure 6: Navigation buttons with tooltip*
+*Figure 7: Navigation buttons with tooltip*
 
 
 
@@ -139,13 +157,14 @@ The following cues are used to ensure the viewer understands the data across eac
 
 ![image-20210728161417666](readme.assets/image-20210728161417666.png)
 
-*Figure 7: Chart with Tooltip*
+*Figure 8: Chart with Tooltip*
 
-To highlight the portion of the chart and urge viewers to focus, annotations have been used in every chart to drive home the message. 
+- In Page 12 the User can click the "Click for More Details" to view the daily details by Age Group
+- To highlight the portion of the chart and urge viewers to focus, annotations have been used in every chart to drive home the message. 
 
 ![image-20210728190537893](readme.assets/image-20210728190537893.png)
 
-*Figure 8: Annotations in the chart*
+*Figure 9: Annotations in the chart*
 
 
 
@@ -186,7 +205,7 @@ graph TD;
 	P12 -->|Restart| P1
 ```
 
-*Figure 9: Scene Navigation*
+*Figure 10: Scene Navigation*
 
 
 
@@ -214,7 +233,7 @@ The annotations follow the same template across all scenes. They are primarily:
 
 ![image-20210728191727662](readme.assets/image-20210728191727662.png)
 
-*Figure 10: Annotation of milestone date on the y-axis.*
+*Figure 11: Annotation of milestone date on the y-axis.*
 
 - The decreasing trends in cases and deaths in the months of May and June 2021
 
@@ -222,7 +241,7 @@ The annotations follow the same template across all scenes. They are primarily:
 
 ![image-20210728191801435](readme.assets/image-20210728191801435.png)
 
-*Figure 11: Annotatation of the month showing decreasing trend and the percentage drop in Cases and Deaths in the month of June.*
+*Figure 12: Annotatation of the month showing decreasing trend and the percentage drop in Cases and Deaths in the month of June.*
 
 There are no changes in annotation within a single scene
 
@@ -255,10 +274,16 @@ The triggers in the narrative visualization are as follows:
 - Page 12: 
   - Previous and Restart buttons
   - Dropdown to select the Age Group : This is used to filter the chart.
+  - "Click for More Details": Modal to display the details for the selected Age Group by Month. User can toggle between months to view daily details.
+
+![image-20210801094658642](readme.assets/image-20210801094658642.png)
+
+*Figure 13: Daily details Modal with capability to change month.*
 
 The affordance provided are as follows:
 
 - The buttons on the bottom right hand side of the page change color on mouseover. 
+- The button on Page 12 to view more details has a distinct color with verbiage to tell users to click if they are interested to view the daily details
 - The dropdown is disabled and greyed out in all pages except for page 12 
 - The dropdown is enabled in page 12 has a white background with a tooltip displaying "Selected Age Group" 
 - The chart footer tells the viewer that the dropdown can be used to filter the chart.
@@ -269,4 +294,4 @@ The affordance provided are as follows:
 
 ![image-20210728161328178](readme.assets/image-20210728161328178.png)
 
-*Figure 12: Highlighted chart footer and the dropdown list.*
+*Figure 14: Highlighted chart footer and the dropdown list.*
